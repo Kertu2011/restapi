@@ -1,0 +1,55 @@
+### Register a new user
+POST http://localhost:3006/api/register
+Content-Type: application/json
+
+{
+  "username": "user",
+  "password": "testest123"
+}
+
+### Login - Get authentication token
+POST http://localhost:3006/api/login
+Content-Type: application/json
+
+{
+  "username": "kertu",
+  "password": "testest123"
+}
+
+### Get all todos (requires authentication)
+GET http://localhost:3006/api/todo
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQ4NDczMTM4LCJleHAiOjE3NDg0NzY3Mzh9.QDklEaoVBg6U50x9SJvmN9N-S00mMbweqKIJ3qUmoDw
+
+
+### Get a specific todo by ID (requires authentication)
+GET http://localhost:3006/api/todo/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQ4NDczMTM4LCJleHAiOjE3NDg0NzY3Mzh9.QDklEaoVBg6U50x9SJvmN9N-S00mMbweqKIJ3qUmoDw
+
+### Create a new todo (requires authentication)
+POST http://localhost:3006/api/todo
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQ4NDczMTM4LCJleHAiOjE3NDg0NzY3Mzh9.QDklEaoVBg6U50x9SJvmN9N-S00mMbweqKIJ3qUmoDw
+
+{
+  "title": "New task",
+  "description": "This is a new task description"
+}
+
+### Update a todo (requires authentication)
+PUT http://localhost:3006/api/todo/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQ4NDczMTM4LCJleHAiOjE3NDg0NzY3Mzh9.QDklEaoVBg6U50x9SJvmN9N-S00mMbweqKIJ3qUmoDw
+
+{
+  "title": "Updated task",
+  "description": "This task has been updated",
+  "completed": true
+}
+
+### Delete a todo (requires authentication)
+DELETE http://localhost:3006/api/todo/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQ4NDcxNjg0LCJleHAiOjE3NDg0NzUyODR9.U4MWpttbwJ_VHCb3IarkvG1xtB795wsnlFZdcQWd0Qc
+
+### Get weather for a city (requires authentication)
+GET http://localhost:3006/api/weather/London
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQ4NDcxNjg0LCJleHAiOjE3NDg0NzUyODR9.U4MWpttbwJ_VHCb3IarkvG1xtB795wsnlFZdcQWd0Qc
